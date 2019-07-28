@@ -1,0 +1,6 @@
+<h1>Your Journal</h1>
+<title><%= @journal.title %></title>
+<p><%= @journal.body %></p>
+
+<button><%= link_to 'Edit', edit_journal_path(@journal) %></button>
+<button><%= link_to 'Delete', journal_path(@journal), method: :delete, data: {confirm: "are you sure?"} %></button>

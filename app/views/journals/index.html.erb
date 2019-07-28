@@ -1,0 +1,17 @@
+<h1>All your Journal entries</h1>
+<table>
+<tr>
+<th>Tittle</th>
+<th>Body</th>
+</tr>
+<td><% @journals.each do |journal| %></td>
+<tr>
+<td><%= journal.title %></td>
+<td><%= journal.body %></td> 
+<td><button><%= link_to 'Edit', edit_journal_path(journal) %></button></td>
+<td><button><%= link_to 'Show', journal_path(journal) %></button></td>
+<td><button><%= link_to 'Delete', journal_path(journal), method: :delete, data: {confirm: "are you sure?"} %></button></td>
+</tr>
+
+<% end %>
+</table>
