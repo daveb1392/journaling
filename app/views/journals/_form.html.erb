@@ -4,22 +4,120 @@
 <div class="row">
 <div class="col-xs-12">
 <%= form_for(@journal, :html => {class: "form-horizontal", role:"form"}) do |f| %>
+<!-- Title Begin -->
 <div class="form-group">
-<div class="control-label col-sm-2">
-    <%= f.label :title %>
-   </div>
-   <div class="col-sm-6">
-    <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
-   </div>
+  <div class="control-label col-sm-2">
+      <%= f.label :title, "Title Journal Entry" %>
   </div>
+
+  <div class="col-sm-6">
+      <%= f.text_field :title, class: "form-control", placeholder: "Journal Entry Title", autofocus: true %>
+  </div>
+</div>
+<!-- Title End -->
+
+
+<!-- Grateful Begin -->
 <div class="form-group">
-<div class="control-label col-sm-2">
-<%= f.label :body %>
+  <div class="control-label col-sm-2">
+    <%= f.label :grateful, "I am grateful for" %>
+  </div>
+  
+  <div class="col-sm-6">
+    <%= f.text_area :grateful, rows: 3, class: "form-control", placeholder:"What are you grateful for today?"%>
+  </div>
 </div>
-<div class="col-sm-6">
-<%= f.text_area :body, rows: 10, class: "form-control", placeholder:"Body of Journal"%>
+<!-- Grateful End -->
+
+<!-- Today Great Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :today_great, "What would make today great?" %>
+  </div>
+
+  <div class="col-sm-6">
+    <%= f.text_area :today_great, rows: 3, class: "form-control", placeholder:"What would make today great?"%>
+  </div>
 </div>
+<!-- Today Great End -->
+
+<!-- Affirmation Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :affirmation, "I am..." %>
+  </div>
+
+  <div class="col-sm-6">  
+    <%= f.text_area :affirmation, rows: 1, class: "form-control", placeholder:"A positive affirmation i.e I am... "%>
+  </div>
 </div>
+<!-- Affirmation End -->
+
+<!-- Good Deed Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :good_deed, "Good deed" %>
+  </div>
+
+  <div class="col-sm-6">
+    <%= f.text_area :good_deed, rows: 1, class: "form-control", placeholder:"What are you grateful for today?"%>
+  </div>
+</div>
+<!-- Good Deed End -->
+
+<!-- Experienced Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :experienced, "" %>
+  </div>
+
+  <div class="col-sm-6">
+    <%= f.text_area :experienced, rows: 1, class: "form-control", placeholder:"What great things did you experience today?"%>
+  </div>
+</div>
+<!-- Experienced End -->
+
+<!-- Improve Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :improve, "Improve" %>
+  </div>
+
+  <div class="col-sm-6">
+    <%= f.text_area :improve, rows: 1, class: "form-control", placeholder:"How could I have made today better?"%>
+  </div>
+</div>
+<!-- Improve End -->
+
+<!-- Meditate Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :meditate, "Meditate today?" %>
+  </div>
+
+  <div class="col-sm-6">
+    <%= f.radio_button :meditate, true %> Yes
+    <%= f.radio_button :meditate, false %> No
+  </div>
+</div>
+<!-- Meditate End -->
+
+<!-- How was day? Begin -->
+<div class="form-group">
+  <div class="control-label col-sm-2">
+    <%= f.label :how_was_day, "Rate your day" %>
+  </div>
+
+  <div class="col-sm-6">
+    <%= f.radio_button :meditate, "Negative" %> Negative
+    <br>
+    <%= f.radio_button :meditate, "Neutral" %> Neutral  
+    <br>
+    <%= f.radio_button :meditate, "Positive" %> Positive 
+    </div>
+</div>
+<!-- How was day? End -->
+
 <div class="form-group">
 <div class="col-sm-offset-2 col-sm-10">
     <%= f.submit class: 'btn btn-primary btn-large' %>
