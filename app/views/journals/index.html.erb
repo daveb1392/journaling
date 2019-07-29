@@ -1,27 +1,6 @@
-<h1 align="center">Your Entries</h1>
 
-<% @journals.each do |journal| %>
-<div class="row">
-    <div class="col-xs-8 col-xs-offset-2" >
-        <div class="well well-lg">
-            <div class="journal-title">
-                <%= link_to journal.title, journal_path(journal) %>
-            </div>
-            <div class="journal-body">
-            <%= truncate(journal.body, length: 100) %>
-            </div>
-            <div class="journal-meta-details">
-            <small>
-            <%= time_ago_in_words(journal.created_at) %>ago, last_update:
-            <%= time_ago_in_words(journal.updated_at) %> ago
-            </small>
-            </div>
-            <div class="journal-actions">
-            <%= link_to 'Edti', edit_journal_path(journal), class: "btn btn-xs btn-primary" %>
-            <%= link_to 'Delete', journal_path(journal), method: :delete, data: {confirm: "are you sure?"} %>
-            
-            </div>
-        </div>
-    </div>
+<%= render 'shared/journals', obj: @journals %>
+
+<div align="center">
+<%= will_paginate %>
 </div>
-<% end %>

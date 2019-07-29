@@ -17,6 +17,7 @@ before_action :set_user, only: [:show, :edit, :update]
     end
 
     def show  
+        @user_journals = @user.journals.paginate(page: params[:page], per_page: 5)
     end
 
     def edit
