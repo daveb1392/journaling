@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_112626) do
+ActiveRecord::Schema.define(version: 2019_07_29_120026) do
 
   create_table "journals", force: :cascade do |t|
     t.string "title"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2019_07_29_112626) do
     t.string "improve"
     t.string "experienced"
     t.boolean "meditate"
-    t.string "which_meditation"
     t.string "how_was_day"
   end
 
