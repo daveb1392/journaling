@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_003913) do
+ActiveRecord::Schema.define(version: 2019_07_29_112626) do
 
   create_table "journals", force: :cascade do |t|
     t.string "title"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "grateful"
+    t.string "today_great"
+    t.string "affirmation"
+    t.string "good_deed"
+    t.string "improve"
+    t.string "experienced"
+    t.boolean "meditate"
+    t.string "which_meditation"
+    t.string "how_was_day"
   end
 
   create_table "users", force: :cascade do |t|

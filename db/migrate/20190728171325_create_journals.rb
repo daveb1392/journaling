@@ -8,3 +8,6 @@ class CreateJournals < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+
+
