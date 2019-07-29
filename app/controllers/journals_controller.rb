@@ -21,6 +21,7 @@ class JournalsController < ApplicationController
 
     def create
         @journal = Journal.new(journal_params)
+        @journal.user = current_user
         if @journal.save
         flash[:notice] = "Your Journal was successfully created"
         redirect_to journal_path(@journal)
