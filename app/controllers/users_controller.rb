@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update]
-
+before_action :validate_user, only: [:show, :edit, :update]
+    # def index
+    #     # @users = User.all
+    # end
 
     def new
         @user = User.new
@@ -9,7 +12,7 @@ before_action :set_user, only: [:show, :edit, :update]
     def create
         @user = User.new(user_params)
         if @user.save
-            flash[:success] = "Welcome to Change #{@user.username}"
+            flash[:success] = "Welcome to your Journals #{@user.username}"
             redirect_to journals_path
         else
             render 'new'
@@ -38,12 +41,15 @@ private
         @user = User.find(params[:id])
     end
 
+    def validate_user
+        unless @user == current_user
+            flash[:notice] = "To access YOUR account, please login or register a new account"
+        end
+    end
 
     def user_params
         params.require(:user).permit(:username, :email, :password)
     end
-
-
 
 
 end
