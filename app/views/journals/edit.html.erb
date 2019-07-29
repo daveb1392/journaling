@@ -3,3 +3,4 @@
 <%= render 'form' %>
 
 <button><%= link_to 'Back', journals_path %></button>
+<%= link_to 'Delete', journal_path(@journal), method: :delete, data: {confirm: "are you sure?"} %>

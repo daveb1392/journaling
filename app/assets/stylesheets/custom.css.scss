@@ -10,6 +10,17 @@
  letter-spacing: -1px;
  font-weight: bold;
 }
+.journal-body {
+ border-top: 1px solid #eaeaea;
+ padding-top: 15px;
+ padding-bottom: 15px;
+}
+
+.journal-title{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
 #logo:hover {
  color: #fff;
  text-decoration: none;

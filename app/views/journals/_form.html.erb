@@ -1,26 +1,5 @@
 
-<% if @journal.errors.any? %>
-<div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                    <div class="panel panel-danger">
-                        <div class="panel-heading">
-                        <h2 class="panel-title">
-                        <%= pluralize(@journal.errors.count, "error") %>
-                        Can't save this entry.
-                        </h2>
-                        <div class="panel-body">
-                        <ul>
-                        <% @journal.errors.full_messages.each do |error| %>
-                        <li><%= error %></li>
-                        <% end %>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<% end %>
-
+<%= render 'shared/errors', obj: @journal %>
 
 <div class="row">
 <div class="col-xs-12">
