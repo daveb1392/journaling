@@ -1,6 +1,7 @@
 class JournalsController < ApplicationController
 
     before_action :find_journal, only: [:show, :edit, :update, :destroy]
+    before_action :user_owns_journal?, only: [:show, :edit, :update, :destroy]
 
     def index 
         @journals = Journal.paginate(page: params[:page], per_page: 5)
@@ -54,8 +55,14 @@ private
         @journal = Journal.find(params[:id])
     end
 
+    def user_owns_journal?
+        unless @journal.user == current_user
+            flash[:notice] = "To see YOUR journals, please login to your account"
+        end
+    end
+
     def journal_params
-        params.require(:journal).permit(:title, :body)
+        params.require(:journal).permit(:title, :grateful, :today_great, :affirmation, :good_deed, :improve, :experienced, :meditate, :how_was_day)
     end
 
 end

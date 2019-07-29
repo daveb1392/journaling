@@ -5,11 +5,11 @@ def new
 end
 
 def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-        session[:user_id] = user.id
+    @user = User.find_by(email: params[:session][:email].downcase)
+    if @user && @user.authenticate(params[:session][:password])
+        session[:user_id] = @user.id
         flash[:success] = "You're logged in"
-        redirect_to users_path(user)
+        redirect_to journals_path
     else
         flash.now[:danger] = "Something is wrong check your details"
         render 'new'
