@@ -11,12 +11,25 @@
       <%= link_to 'Book & Zhen', root_path, class: "navbar-brand", id:"logo" %>
     </div>
 
+
+
+
+
+
+
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <% if logged_in? %>
+        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
         <li><%= link_to 'Journals', journals_path %></li>
         <li><%= link_to 'New entry', new_journal_path %></li>
         </ul>
+        <% else %>
+        <li><%= link_to 'Log in', login_path %></li>
+        
+        <% end %>
       
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
