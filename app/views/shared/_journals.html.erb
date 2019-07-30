@@ -1,7 +1,7 @@
 <h1 align="center">All Entries</h1>
 
 <% obj.each do |journal| %>
-    <% if journal.user == current_user %>
+    <% if current_user == journal.user %>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2" >
                 <div class="well well-lg">

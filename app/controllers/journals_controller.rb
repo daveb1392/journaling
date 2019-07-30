@@ -4,7 +4,7 @@ class JournalsController < ApplicationController
     before_action :user_owns_journal?, only: [:show, :edit, :update, :destroy]
 
     def index 
-        @journals = Journal.paginate(page: params[:page], per_page: 5)
+        @journals = Journal.paginate(page: params[:page], per_page: 10)
     end
 
     def new 
@@ -12,9 +12,13 @@ class JournalsController < ApplicationController
     end
 
     def show
+        if logged_in?
+        end
     end
 
     def edit
+        if logged_in?
+        end
     end
 
 
