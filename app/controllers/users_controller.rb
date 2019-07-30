@@ -9,16 +9,27 @@ before_action :validate_user, only: [:show, :edit, :update]
         @user = User.new
     end
 
+    # def create
+    #     @user = User.new(user_params)
+    #     if @user.save
+    #         session[:user_id] = @user.id
+    #         flash[:success] = "Welcome to your Journals #{@user.username}"
+    #         redirect_to journals_path
+    #     else
+    #         render 'new'
+    #     end      
+    # end
+    
     def create
-        @user = User.new(user_params)
-        if @user.save
+        @user = User.create(user_params)
+            if @user
             session[:user_id] = @user.id
-            flash[:success] = "Welcome to your Journals #{@user.username}"
-            redirect_to journals_path
-        else
-            render 'new'
-        end      
+            flash[:success] = "Welcome to Book & Zhen #{@user.username}"
+            redirect_to user_path(@user)
+    else
+        render 'new'
     end
+end
 
     def show  
         @user_journals = @user.journals.paginate(page: params[:page], per_page: 5)

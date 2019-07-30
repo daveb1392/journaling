@@ -1,6 +1,9 @@
-<h1>Edit your Journal Entry</h1>
+
+<% if @journal == current_user %>
+<h1>Edit your Journal Entry</h1>  
 
 <%= render 'form' %>
 
 <button><%= link_to 'Back', journals_path %></button>
 <%= link_to 'Delete', journal_path(@journal), method: :delete, data: {confirm: "are you sure?"} %>
+<% end %>
