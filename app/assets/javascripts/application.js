@@ -16,4 +16,7 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
-
+//= require plyr
+document.addEventListener("turbolinks:load", function () {
+    const player = new Plyr('#player');
+});
