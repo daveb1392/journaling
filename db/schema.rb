@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_142659) do
+ActiveRecord::Schema.define(version: 2019_07_30_161927) do
 
   create_table "journals", force: :cascade do |t|
     t.string "title"
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 2019_07_30_142659) do
     t.string "category"
     t.string "author"
     t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

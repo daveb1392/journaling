@@ -1,6 +1,5 @@
 class Meditation < ApplicationRecord
-belongs_to :journal
-
+has_many :journals
 
 
 
