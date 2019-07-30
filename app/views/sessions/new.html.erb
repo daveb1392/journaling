@@ -1,32 +1,56 @@
 <%= form_for(:session, :html => {class: "form-horizontal", role:"form"}) do |f| %>
 
+<html>
 
-  <div class="form-group">
-  <div class="control-label col-sm-2">
-  <%= f.label :email %>
-  </div>
-  <div class="col-sm-8">
-  <%= f.email_field :email, class: "form-control", placeholder:"Enter your email"%>
-  </div>
-  </div>
+<body>
+  <div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" data-color="white" data-image="./assets/img/full-screen-image-1.jpg">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+              <form action="#" method="#" novalidate="" class="ng-untouched ng-pristine ng-valid" _lpchecked="1">
+                <div class="card">
+                  <div class="header text-center">Login</div>
+                  <div class="content">
+                    <div class="form-group">
+                      <div class="control-label col-sm-2">
+                        <%= f.label :email %>
+                      </div>
+                      
+                      <div class="col-sm-8">
+                        <%= f.email_field :email, class: "form-control", placeholder:"Enter your email"%>
+                      </div>
+                    </div>                    
 
+                    <div class="form-group">
+                      <div class="control-label col-sm-2">
+                        <%= f.label :password %>
+                      </div>
 
-  <div class="form-group">
-  <div class="control-label col-sm-2">
-  <%= f.label :password %>
+                      <div class="col-sm-8">
+                          <%= f.password_field :password, class: "form-control", placeholder:"Enter password"%>
+                      </div>
+                    </div>                  
+            </div>
+            <div class="footer text-center"><button class="btn btn-fill btn-danger btn-wd" type="submit">Login</button></div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-8">
-  <%= f.password_field :password, class: "form-control", placeholder:"Enter password"%>
+  <footer class="footer footer-transparent">
+    <div class="container">
+     
+     <center> <p class="copyright"> © 2019 <a href="https://www.creative-tim.com">Made with love by a(nil) and d(balls)</a></p></center> 
+    </div>
+  </footer>
+  <div class="full-page-background" style="background-image: url(https://demos.creative-tim.com/light-bootstrap-dashboard-pro-angular2/assets/img/full-screen-image-3.jpg) "></div>
   </div>
   </div>
+</body>
 
-  
-  
-<div class="form-group">
-<div class="col-sm-offset-2 col-sm-10">
-    <%= f.submit "Log in", class: 'btn btn-primary btn-large' %>
-   </div>
-</div>
-
+</html>
 
 <% end %>
