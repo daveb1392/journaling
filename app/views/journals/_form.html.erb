@@ -1,6 +1,6 @@
-
+<% if logged_in? %>
 <%= render 'shared/errors', obj: @journal %>
-
+<h1>Create a new Journal Entry</h1>
 <div class="row">
 <div class="col-xs-12">
 <%= form_for(@journal, :html => {class: "form-horizontal", role:"form"}) do |f| %>
@@ -109,11 +109,11 @@
   </div>
 
   <div class="col-sm-6">
-    <%= f.radio_button :meditate, "Negative" %> Negative
+    <%= f.radio_button :how_was_day, "Negative" %> Negative
     <br>
-    <%= f.radio_button :meditate, "Neutral" %> Neutral  
+    <%= f.radio_button :how_was_day, "Neutral" %> Neutral  
     <br>
-    <%= f.radio_button :meditate, "Positive" %> Positive 
+    <%= f.radio_button :how_was_day, "Positive" %> Positive 
     </div>
 </div>
 <!-- How was day? End -->
@@ -124,6 +124,7 @@
    </div>
 </div>
 
+<% end %>
 <% end %>
 </div>
 </div>

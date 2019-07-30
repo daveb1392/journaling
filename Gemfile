@@ -45,7 +45,7 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 # Paginations 
-gem 'will_paginate', '3.1.5'
+gem 'will_paginate', '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 
 

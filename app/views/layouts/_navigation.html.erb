@@ -11,39 +11,32 @@
       <%= link_to 'Book & Zhen', root_path, class: "navbar-brand", id:"logo" %>
     </div>
 
+    <% if logged_in? %>
 
-
-
-
-
-
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <% if logged_in? %>
-        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
-        <li><%= link_to 'Journals', journals_path %></li>
+      <li><%= link_to 'My Journals', user_path(current_user) %></li>
         <li><%= link_to 'New entry', new_journal_path %></li>
+    </ul>
+    
+    <% end %>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+        
+        <li><%= link_to 'Your Profile', edit_user_path(current_user) %> </li>
+        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
         </ul>
         <% else %>
+        <li><%= link_to 'Sign Up', new_user_path %></li>
         <li><%= link_to 'Log in', login_path %></li>
+        
         
         <% end %>
       
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
