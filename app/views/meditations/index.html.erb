@@ -1,8 +1,9 @@
 
-<% if !logged_in?%>
-<center><h2>Welcome to Book & Zhen, please sign up or login to get more mindful!</h2></center>
-<% end %>
+
+<center><h2>Meditations</h2></center>
+
 <style>
+
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -57,28 +58,30 @@
 }
 </style>
 
-<% if logged_in?%>
-<center><h2>Welcome to Book & Zhen</h2></center>
 
         <div class="col-sm-12">
           <br><br>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-4 placeholder">
               <img src="http://cdn.shopify.com/s/files/1/2048/8041/products/Garden_Journal-4694_1024x1024.jpg?v=1541189817" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4><%= link_to "Journal", new_journal_path %></h4>
+              <h4><%= link_to "Mindfulness", new_journal_path %></h4>
               <span class="text-muted">Log your feelings for the day</span>
             </div>
             <div class="col-xs-6 col-sm-4 placeholder">
               <img src="http://cd5vo46ju4834fu142zvmudg.wpengine.netdna-cdn.com/wp-content/uploads/7-ways-let-go-feel-less-stress-asap1.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4><%= link_to "Meditate", meditations_path %></h4>
-              <span class="text-muted">Take one of our awesome meditations brah'</span>
+              <h4><%= link_to "Loving Kindness", new_journal_path %></h4>
+              <span class="Loving ">Take one of our awesome meditations brah'</span>
             </div>
             <div class="col-xs-6 col-sm-4 placeholder">
               <img src="http://www.leeds-mindfulness.uk/wp-content/uploads/2016/08/mindfulness-events-leeds.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Events</h4>
+              <h4><%= link_to "Unguided", new_journal_path %></h4>
               <span class="text-muted">Find and book your events</span>
             </div>
           </div>
 
         </div>
- <% end %>
+ 
+
+<% @meditations.each do |meditation| %>
+<%= link_to meditation.type, meditations_path(meditation) %>
+<% end %>
