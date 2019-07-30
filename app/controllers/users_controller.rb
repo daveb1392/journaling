@@ -25,7 +25,7 @@ before_action :validate_user, only: [:show, :edit, :update]
             if @user
             session[:user_id] = @user.id
             flash[:success] = "Welcome to Book & Zhen #{@user.username}"
-            redirect_to user_path(@user)
+            redirect_to root_path
     else
         render 'new'
     end
