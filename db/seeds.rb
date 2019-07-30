@@ -7,4 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-meditations = [{ 'Mindful', '' }]
+meditations = [
+    {category: "Mindful", author:"Anil", url:"www.google.com"},
+    {category: "Loving Kindness", author:"David", url:"www.flatironschool.com"},
+    {category: "Unguided", author:"Mani", url:"www.whatever.com"},
+]
+
+meditations.each {|meditation| Meditation.create(meditation)}
