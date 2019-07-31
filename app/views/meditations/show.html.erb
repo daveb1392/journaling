@@ -1,8 +1,181 @@
-<p>SHIT</p>
 <%= @meditation.category %>
 
+<style>
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700);
 
+.scope {
+    border-radius: 50%;
+   border:15px solid hsla(0,0%,0%,.7);;
+
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+  perspective-origin: 50% 50%;
+  animation:spinner 30s linear infinite;
+  transition: all 1s ease;
+}
+
+.inner-scope {
+    animation: spin_view 30s linear infinite;
+    border-radius: 50%;
+    border-radius: 50%;
+    border:none;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+   transform-style: preserve-3d;
+    /* circular mask effect in Safari */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  
+}
+.view {
+    border-radius: 25%;
+    height: 100%;
+    overflow: hidden;
+    perspective: 530px;
+    position: absolute;
+    width: 100%;
+  
+}
+.opp{
+    background: #ffffff;
+    transform: rotateY(180deg) rotateZ(60deg);
+}
+
+.view:not(.opp),
+.opposite,
+.image {
+    backface-visibility: hidden;
+}
+.opposite {
+    height: 50%;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform-origin: 0% 0%;
+    width: 50%;
+}
+.opposite:nth-child(1) {
+    transform: rotateZ(0deg) skew(30deg);
+}
+.opposite:nth-child(2) {
+    transform: rotateZ(120deg) skew(30deg);
+}
+.opposite:nth-child(3) {
+    transform: rotateZ(240deg) skew(30deg);
+}
+.image {
+    height: 100%;
+    left: -29%;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 50%;
+    transform: skew(-30deg);
+    width: 100%;
+}
+
+@keyframes spin_view {
+    0% { transform: rotateZ(0) }
+    100% { transform: rotateZ(360deg) }
+}
+ @keyframes spinner {
+    from { transform: rotate(0deg);    }
+    to   { transform: rotate(360deg) ; }
+  }
+@-webkit-keyframes rotateImage {
+    0% { transform: rotateZ(0); background-position: 50% 44px; }
+    100% { transform: rotateZ(359deg); background-position: 50% -1832px; }
+}
+@-moz-keyframes rotateImage {
+    0% { transform: rotateZ(0); background-position: 50% 44px; }
+    100% { transform: rotateZ(359deg); background-position: 50% -1832px; }
+}
+@keyframes rotateImage {
+    0% { transform: rotateZ(0); background-position: 50% 44px; }
+    100% { transform: rotateZ(359deg); background-position: 50% -1832px; }
+}
+.image .inner {
+    animation: rotateImage 40s linear infinite;
+    background: url(https://media.licdn.com/dms/image/C4E03AQFCG1Ap6nDTXw/profile-displayphoto-shrink_800_800/0?e=1570060800&v=beta&t=CHTRnK9Kw5dzV0aRIDD6Ajka2Apsn4T-PMlpuCbE6hc) repeat;
+    display: block;
+    height: 375px;
+    left: -25%;
+    position: absolute;
+    top: -25%;
+    width: 376px;
+}
+
+html {
+    background-image:linear-gradient(to bottom, hsla(0,0%,0%,1), hsla(255,255%,2%,0.8), hsla(0, 0%, 0%,1)100%);
+    min-height: 100%;
+  
+}
+body {
+    color: #fff;
+   font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-shadow: 0 1px 1px hsla(0,0%,0%,.2);
+    -webkit-font-smoothing: antialiased;
+    overflow:hidden;
+  
+}
+.header {
+    padding: 5vw 0;
+}
+
+h3{
+  font-size: 5em;
+  font-weight: bold;
+  margin: 1% 0;
+  text-shadow:
+    1px 2px hsla(255,255%,255%, 0.7),
+    2px 3px hsla(255,255%,255%, 0.3);
+}
+a{
+  text-decoration:none;
+  color:#fff;
+}
+a:hover{
+  text-decoration:underline;
+}
+</style>
 
 <audio id="player" controls>
     <source src="https://www.fragrantheart.com/audio/relaxation/stress-relief.mp3" type="audio/mp3">
 </audio>
+<br><br>
+<div class = 'stage'>
+<div class="scope" >
+    <div class="inner-scope">
+        <div class="view opp">
+            <div class="opposite">
+                <div class="image"><div class="inner"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner"></div></div>
+            </div>
+        </div>
+        <div class="view">
+            <div class="opposite">
+                <div class="image"><div class="inner"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

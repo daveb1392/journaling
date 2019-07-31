@@ -11,7 +11,9 @@
   </head>
 
   <body>
+    <% @all_data = HTTP.auth("Bearer HV5IST6QLORF4Y6ZDHUC").get("https://www.eventbriteapi.com/v3/events/search/?location.address=England&subcategories=14009").to_s %>
     <%= render 'shared/messages' %>
     <%= yield %>
+
   </body>
 </html>
