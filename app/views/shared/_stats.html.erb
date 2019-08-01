@@ -1,10 +1,64 @@
 <% if @user == current_user %>
 
-     <h2>Since you've joined us <%= @user.date_difference %> day/s ago</h2>
-     <h2>Your Journal entries: <%= @user.journals.count {|entry| entry} %> </h2>
-     <h2>Your Positive Days: <%= @user.positive_days_count %></h2>
-     <h2>Your Negative Days: <%= @user.negative_days_count %></h2>
-     <h2>Your Neutral Days: <%= @user.neutral_days_count %></h2>
-     <h2>Meditated Days: <%= @user.user_meditation_count %></h2>
+
+
+      <html lang="en">
+<!-- 
+"A census taker once tried to test me. 
+I ate his liver with some fava beans and a nice Chianti." 
+-The Silence of the Lambs
+-->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fa fa-book" style="font-size:40px;color:gray"></i>
+              <h4>Total Journal Entries</h4>
+              <p><%= @user.journals.count {|entry| entry} %></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fa fa-book" style="font-size:40px;color:gray"></i>
+              <h4>Day's you've Meditated</h4>
+              <p><%= @user.user_meditation_count %></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fa fa-calendar" style="font-size:40px;color:gray"></i>
+              <h4>Days since you joined us</h4>
+              <p><%= @user.date_difference %></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fa fa-book" style="font-size:40px;color:gray"></i>
+              <h4>Your state o' mind yo</h4>
+              <p><%= @user.negative_days_count %> Negative days</p>
+              <%= @user.neutral_days_count %> Neutral days</p>
+              <p><%= @user.positive_days_count %> Positive days</p>
+
+            </div>
+          </div>
+        </div>
+        
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
 
 <% end %>

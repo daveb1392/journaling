@@ -14,19 +14,20 @@
    #       key["name"]
    #    end
    # end
+
    def result 
     all_data["events"].map do |event| 
       { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"] } 
     end
    end
 
+
+   
+
+
    def event_names
       event.map { |event| event }
    end
-
-  
-
-
 
 
 end
