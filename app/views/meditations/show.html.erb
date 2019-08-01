@@ -102,12 +102,24 @@
     animation: rotateImage 40s linear infinite;
     background: url(https://media.licdn.com/dms/image/C4E03AQFCG1Ap6nDTXw/profile-displayphoto-shrink_800_800/0?e=1570060800&v=beta&t=CHTRnK9Kw5dzV0aRIDD6Ajka2Apsn4T-PMlpuCbE6hc) repeat;
     display: block;
-    height: 375px;
+    height: 250px;
     left: -25%;
     position: absolute;
     top: -25%;
     width: 376px;
 }
+
+.image .inner2 {
+    animation: rotateImage 40s linear infinite;
+    background: url(https://media.licdn.com/dms/image/C4D03AQHur_mSNpxY5w/profile-displayphoto-shrink_800_800/0?e=1570060800&v=beta&t=TR4qJNGVHf_2JAaxc-tzDt_yfD6d6MvojeYAw9gh_sY) repeat;
+    display: block;
+    height: 200px;
+    left: -25%;
+    position: absolute;
+    top: -25%;
+    width: 376px;
+}
+
 
 html {
     background-image:linear-gradient(to bottom, hsla(0,0%,0%,1), hsla(255,255%,2%,0.8), hsla(0, 0%, 0%,1)100%);
@@ -115,7 +127,7 @@ html {
   
 }
 body {
-    color: #fff;
+    color: #000;
    font-family: 'Ubuntu', sans-serif;
     font-size: 12px;
     margin: 0;
@@ -148,9 +160,13 @@ a:hover{
 </style>
 
 <audio id="player" controls>
-    <source src="https://www.fragrantheart.com/audio/relaxation/stress-relief.mp3" type="audio/mp3">
+    <source src="<%= @meditation.url %>" type="audio/mp3">
 </audio>
 <br><br>
+
+
+<div class="col-sm-6">
+
 <div class = 'stage'>
 <div class="scope" >
     <div class="inner-scope">
@@ -179,3 +195,35 @@ a:hover{
     </div>
 </div>
 </div>
+</div>
+
+<div class = 'stage'>
+<div class="scope" >
+    <div class="inner-scope">
+        <div class="view opp">
+            <div class="opposite">
+                <div class="image"><div class="inner2"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner2"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner2"></div></div>
+            </div>
+        </div>
+        <div class="view">
+            <div class="opposite">
+                <div class="image"><div class="inner2"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner2"></div></div>
+            </div>
+            <div class="opposite">
+                <div class="image"><div class="inner2"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+

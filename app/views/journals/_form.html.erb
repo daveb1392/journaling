@@ -103,10 +103,18 @@
 
 <!-- Meditation select-->
 <div class="form-group">
- <div class="col-sm-6">
-    <%= f.collection_select :meditation_id, Meditation.all, :id, :category%>
-  </div>
+
+    <div class="control-label col-sm-2">
+      <%= f.label :meditation_id, "Which meditation?" %>
+    </div>
+
+    <div class="col-sm-6">
+        <%= f.collection_select :meditation_id, Meditation.all, :id, :category%>
+    </div>
+
 </div>
+<!-- Meditation select end-->
+
 
 
 <!-- How was day? Begin -->

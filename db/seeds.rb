@@ -8,9 +8,9 @@
 
 
 meditations = [
-    {category: "Mindful", author:"Anil", url:"www.google.com"},
-    {category: "Loving Kindness", author:"David", url:"www.flatironschool.com"},
-    {category: "Unguided", author:"Mani", url:"www.whatever.com"},
+    {category: "Mindful", author:"Anil", url:"https://www.fragrantheart.com/audio/relaxation/stress-relief.mp3"},
+    {category: "Loving Kindness", author:"David", url:"https://www.fragrantheart.com/audio/relaxation/deep-relaxation-nomusic.mp3"},
+    {category: "Unguided", author:"Mani", url:"https://www.fragrantheart.com/audio/relaxation/ground-yourself-and-breath-into-your-belly-nomusic.mp3"},
 ]
 
 meditations.each {|meditation| Meditation.create(meditation)}

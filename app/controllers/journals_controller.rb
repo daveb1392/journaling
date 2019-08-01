@@ -21,17 +21,7 @@ class JournalsController < ApplicationController
         end
     end
 
-    # def positive_days
-    #     Journal.select { |entry| entry.how_was_day == "Positive" }
-    # end
-
-    # def negative_days
-    #     Journal.select { |entry| entry.how_was_day == "Negative" }
-    # end
-
-    # def neutral_days
-    #     Journal.select { |entry| entry.how_was_day == "Neutral" }
-    # end
+   
 
     # def happy_day
     #     if @journal.how_was_day == "Positive"

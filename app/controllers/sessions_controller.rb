@@ -27,7 +27,7 @@ end
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
             flash[:success] = "You're logged in"
-            redirect_to user_path(user)
+            redirect_to root_path
         else
             flash.now[:danger] = "Something is wrong check your details"
             render 'new'

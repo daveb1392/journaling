@@ -47,10 +47,6 @@ end
         end
     end
     
-    def positive
-        @user_positive = Journal.select { |entry| entry.how_was_day == "Positive" }
-    end
-
 
     private 
 

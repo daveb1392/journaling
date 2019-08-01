@@ -4,12 +4,9 @@
 
     <%= render 'shared/journals', obj: @user.journals %>
 
-    <h2>Your Journal entries: <%= @user.journals.count {|entry| entry} %> </h2>
-     
-     
-     <%= @user_positive %>
+    <%= render 'shared/stats' %>
 
-
+      
 
 
 <% end %>

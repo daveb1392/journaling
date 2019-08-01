@@ -1,0 +1,10 @@
+<% if @user == current_user %>
+
+     <h2>Since you've joined us <%= @user.date_difference %> day/s ago</h2>
+     <h2>Your Journal entries: <%= @user.journals.count {|entry| entry} %> </h2>
+     <h2>Your Positive Days: <%= @user.positive_days_count %></h2>
+     <h2>Your Negative Days: <%= @user.negative_days_count %></h2>
+     <h2>Your Neutral Days: <%= @user.neutral_days_count %></h2>
+     <h2>Meditated Days: <%= @user.user_meditation_count %></h2>
+
+<% end %>
