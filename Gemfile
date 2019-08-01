@@ -82,3 +82,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # HTTP gem for API
 gem "http"
+group :production do
+gem 'pg'
+end
