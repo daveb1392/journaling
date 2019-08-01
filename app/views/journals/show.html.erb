@@ -8,7 +8,19 @@
 
 </div>
 </ul>
-    <%= simple_format(@journal.title) %>
+    <b>Journal title</b><%= simple_format(@journal.title) %>
+    <b>I am grateful for</b><%= simple_format(@journal.grateful) %>
+    <b>What would make today great?</b><%= simple_format(@journal.today_great) %>
+    <b>Affirmation - I am:</b><%= simple_format(@journal.affirmation) %>
+    <b>My good deed for today:</b><%= simple_format(@journal.good_deed) %>
+    <b>Great things I experienced today</b><%= simple_format(@journal.experienced) %>
+    <b>What could I have improved about my day?</b><%= simple_format(@journal.improve) %>
+    <b>Did I meditate today?<br></b><%= @journal.meditate %><br>
+    <b>Which meditation did you do?<br></b><%= @journal.meditation.category %><br>
+    <b>How was your day?</b><%= simple_format(@journal.how_was_day) %>
+
+
+
     <div class="journal-actions">
     <%= link_to 'Edit', edit_journal_path(@journal), class: "btn btn-xs btn-primary" %>
     <%= link_to "Delete", journal_path(@journal), method: :delete, data: { confirm: "Are you sure you want to delete this entry?"}, class: "btn btn-xs btn-danger" %> 

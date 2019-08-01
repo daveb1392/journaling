@@ -1,0 +1,62 @@
+<% if @user == current_user %>
+
+
+
+      <html lang="en">
+<!-- 
+"A census taker once tried to test me. 
+I ate his liver with some fava beans and a nice Chianti." 
+-The Silence of the Lambs
+-->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fas fa-book" style="font-size:40px;color:gray"></i>
+              <h4>Total Journal Entries</h4>
+              <p><%= @user.journals.count {|entry| entry} %></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fas fa-bed" style="font-size:40px;color:gray"></i>
+              <h4>Days you've Meditated</h4>
+              <p><%= @user.user_meditation_count %></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+            <i class="fas fa-calendar" style="font-size:40px;color:gray"></i>
+              <h4>Days since you joined us</h4>
+              <p><%= @user.date_difference %></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+            
+            <i class="fas fa-brain" style="font-size:40px;color:gray"></i>
+              <h4>Your state o' mind yo</h4>
+              <p><%= @user.negative_days_count %> Negative day/s</p>
+              <p><%= @user.neutral_days_count %> Neutral day/s</p>
+              <p><%= @user.positive_days_count %> Positive day/s</p>
+
+            </div>
+          </div>
+        </div>
+        
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<% end %>

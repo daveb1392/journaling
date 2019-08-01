@@ -1,12 +1,12 @@
  class ApiCommunicator
  
  
-   def all_data
-      JSON.parse(HTTP.auth("").get("https://www.eventbriteapi.com/v3/events/search/?location.address=England&subcategories=14009").to_s) 
+   def self.all_data
+      JSON.parse(HTTP.auth("Bearer HV5IST6QLORF4Y6ZDHUC").get("https://www.eventbriteapi.com/v3/events/search/?location.address=England&subcategories=14009").to_s) 
    end
 
    def event
-      all_data["events"]
+      self.all_data["events"]
    end
   
    # def event_names
@@ -14,18 +14,16 @@
    #       key["name"]
    #    end
    # end
-   def result 
+
+   def self.result 
     all_data["events"].map do |event| 
-      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"] } 
+      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"] } 
+    end
    end
 
    def event_names
       event.map { |event| event }
    end
-
-  
-
-
 
 
 end

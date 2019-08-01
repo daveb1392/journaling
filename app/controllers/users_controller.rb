@@ -22,12 +22,12 @@ before_action :validate_user, only: [:show, :edit, :update]
     
     def create
         @user = User.create(user_params)
-            if @user
+            if @user.valid?
             session[:user_id] = @user.id
             flash[:success] = "Welcome to Book & Zhen #{@user.username}"
             redirect_to root_path
     else
-        render 'new'
+            render 'new'
     end
 end
 
@@ -46,8 +46,9 @@ end
             render 'edit'
         end
     end
+    
 
-private 
+    private 
 
     def set_user
         @user = User.find(params[:id])

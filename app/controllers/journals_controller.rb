@@ -21,6 +21,12 @@ class JournalsController < ApplicationController
         end
     end
 
+   
+
+    # def happy_day
+    #     if @journal.how_was_day == "Positive"
+
+
 
     #create can be refactored
 
@@ -66,7 +72,7 @@ private
     end
 
     def journal_params
-        params.require(:journal).permit(:title, :grateful, :today_great, :affirmation, :good_deed, :improve, :experienced, :meditate, :how_was_day)
+        params.require(:journal).permit(:title, :grateful, :today_great, :affirmation, :good_deed, :improve, :experienced, :meditate, :how_was_day, :meditation_id)
     end
 
 end

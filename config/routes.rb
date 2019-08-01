@@ -10,12 +10,9 @@ Rails.application.routes.draw do
  
  
  resources :journals
- 
- 
  resources :users, except: [:new]
  resources :meditations, only: [:index, :show]
-
-
+ resources :events, only: [:index, :show, :new, :create, :destroy]
 
 
 end
