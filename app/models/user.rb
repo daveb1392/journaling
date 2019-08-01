@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 has_many :journals
+has_many :attendances
 
 validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
 VALID_EMAIL_REGEX = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
