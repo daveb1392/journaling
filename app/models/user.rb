@@ -9,12 +9,16 @@ has_secure_password
 
 
 
+       
 
-
-
-
-
-
+        def count_meditation
+            bybug
+            if self.meditation == TRUE
+                self.meditation.count "Good Job, keep up the good work"
+            else
+                "You have no entries, go and meditate." 
+            end
+        end
 
 
 end

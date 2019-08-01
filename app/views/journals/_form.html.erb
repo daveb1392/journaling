@@ -1,6 +1,5 @@
 <% if logged_in? %>
 <%= render 'shared/errors', obj: @journal %>
-<h1>Create a new Journal Entry</h1>
 <div class="row">
 <div class="col-xs-12">
 <%= form_for(@journal, :html => {class: "form-horizontal", role:"form"}) do |f| %>
@@ -101,6 +100,14 @@
   </div>
 </div>
 <!-- Meditate End -->
+
+<!-- Meditation select-->
+<div class="form-group">
+ <div class="col-sm-6">
+    <%= f.collection_select :meditation_id, Meditation.all, :id, :category%>
+  </div>
+</div>
+
 
 <!-- How was day? Begin -->
 <div class="form-group">

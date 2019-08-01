@@ -46,8 +46,13 @@ end
             render 'edit'
         end
     end
+    
+    def positive
+        @user_positive = Journal.select { |entry| entry.how_was_day == "Positive" }
+    end
 
-private 
+
+    private 
 
     def set_user
         @user = User.find(params[:id])

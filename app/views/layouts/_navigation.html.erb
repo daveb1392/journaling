@@ -15,8 +15,9 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li><%= link_to 'My Journals', user_path(current_user) %></li>
+      <li><%= link_to 'My Dashboard', user_path(current_user) %></li>
         <li><%= link_to 'New entry', new_journal_path %></li>
+        <li><%= link_to 'Events', new_journal_path %></li>
     </ul>
     
     <% end %>

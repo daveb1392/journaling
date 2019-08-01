@@ -21,6 +21,22 @@ class JournalsController < ApplicationController
         end
     end
 
+    # def positive_days
+    #     Journal.select { |entry| entry.how_was_day == "Positive" }
+    # end
+
+    # def negative_days
+    #     Journal.select { |entry| entry.how_was_day == "Negative" }
+    # end
+
+    # def neutral_days
+    #     Journal.select { |entry| entry.how_was_day == "Neutral" }
+    # end
+
+    # def happy_day
+    #     if @journal.how_was_day == "Positive"
+
+
 
     #create can be refactored
 
@@ -66,7 +82,7 @@ private
     end
 
     def journal_params
-        params.require(:journal).permit(:title, :grateful, :today_great, :affirmation, :good_deed, :improve, :experienced, :meditate, :how_was_day)
+        params.require(:journal).permit(:title, :grateful, :today_great, :affirmation, :good_deed, :improve, :experienced, :meditate, :how_was_day, :meditation_id)
     end
 
 end
