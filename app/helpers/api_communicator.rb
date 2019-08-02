@@ -17,7 +17,7 @@
 
    def self.result 
     all_data["events"].map do |event| 
-      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"] } 
+      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"], event_image: event["logo"]["original"]["url"]} 
     end
    end
 
