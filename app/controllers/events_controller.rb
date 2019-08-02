@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
 
         def set_event
-            params.requite(:event).permit(:name, :date, :api_id, :event_url)
+            params.require(:event).permit(:name, :date, :api_id, :event_url, :event_image)
         end
    
 end
