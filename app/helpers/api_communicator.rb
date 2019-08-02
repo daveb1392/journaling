@@ -17,15 +17,16 @@
 
    def self.result 
     all_data["events"].map do |event|
-      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"]} 
+      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"], start_time: event["start"]["local"], event_image: self.image(event)} 
     end
    end
 
-   def self.image
-      all_data["events"].map do |event|
-      if 
-       { event_image: event["logo"]["original"]["url"] }
-      end
+   def self.image(result)
+         if !!result["logo"]
+            result["logo"]["original"]["url"] 
+         else
+            "https://images.unsplash.com/photo-1534804442465-9689d85be37b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80" 
+         end
    end
 
    def event_names
