@@ -17,9 +17,15 @@
 
    def self.result 
     all_data["events"].map do |event|
-      byebug
-      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"], event_image: event["logo"]["original"]["url"]} 
+      { name: event["name"]["text"], description: event["description"]["text"], url: event["url"], event_id: event["id"]} 
     end
+   end
+
+   def self.image
+      all_data["events"].map do |event|
+      if 
+       { event_image: event["logo"]["original"]["url"] }
+      end
    end
 
    def event_names
