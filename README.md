@@ -5,13 +5,14 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+run rails db migrate
 
 * Database initialization
 
@@ -23,3 +24,8 @@ Things you may want to cover:
 
 * ...
 # journaling
+
+Module 2 final project app. 
+
+demo. 
+https://bookandzhen.herokuapp.com
