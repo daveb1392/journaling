@@ -1,31 +1,18 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version 2.7
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-run rails db migrate
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# journaling
+# Journaling
 
 Module 2 final project app. 
+A Mindfulness journaling app that allows you to record your daily thoughts, practice meditation, and look at various events across the uk. 
+
+The app has been built on:
+
+- Ruby on Rails, backend and frontend.
+- Postgres db.
+- EventBrite Api
 
 demo. 
 https://bookandzhen.herokuapp.com
+
+Logins 
+
+email: demo
+password: demo
